@@ -9,8 +9,7 @@ public class SetPanelData : MonoBehaviour
     public Text cost;
     public Text itemName;
     public Image img;
-    Item itemData;
-    public void SetData() {
+    public void SetData(Item itemData) {
         explain.text = itemData.explain;
         cost.text = "가격 : " + itemData.cost.ToString();
         itemName.text = itemData.name;

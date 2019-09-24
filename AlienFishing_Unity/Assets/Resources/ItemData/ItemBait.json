@@ -1,0 +1,44 @@
+﻿{
+  "bait": [
+    {
+      "name": "기린",
+      "cost": 123,
+      "creditLimit": 7,
+      "explain": "노란 기린입니다",
+      "imagePath": "ItemImage/giraffe",
+      "power": 4,
+      "speed": 5,
+      "allure": 6
+    },
+    {
+      "name": "하마",
+      "cost": 234,
+      "creditLimit": 6,
+      "explain": "파란 하마입니다",
+      "imagePath": "ItemImage/hippo",
+      "power": 7,
+      "speed": 8,
+      "allure": 9
+    },
+    {
+      "name": "원숭이",
+      "cost": 345,
+      "creditLimit": 5,
+      "explain": "갈색 원숭이입니다",
+      "imagePath": "ItemImage/monkey",
+      "power": 10,
+      "speed": 11,
+      "allure": 12
+    },
+    {
+      "name": "판다",
+      "cost": 456,
+      "creditLimit": 4,
+      "explain": "하얀 판다입니다",
+      "imagePath": "ItemImage/panda",
+      "power": 12,
+      "speed": 13,
+      "allure": 15
+    }
+  ]
+}

@@ -6,6 +6,9 @@ public class ShopManager : MonoBehaviour
 {
     private static ShopManager instance = null;
     public static ShopManager Instance { get => instance; }
+
+    int select_subMenu = 0;
+
     private void Awake()
     {
         if (instance != null)
@@ -14,20 +17,15 @@ public class ShopManager : MonoBehaviour
             return;
         }
         instance = this;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     private void OnDestroy()
     {
         instance = null;   
+    }
+    
+    public void ChangeSubMenu(int select)
+    {
+        select_subMenu = select;
     }
 }

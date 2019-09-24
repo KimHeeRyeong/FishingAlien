@@ -4,12 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class Items
+public class Baits
 {
-    Baits baits;
-    Equips equips;
-    SingleUses SingleUses;
+    public List<Bait> bait = new List<Bait>();
 }
+[Serializable]
+public class Equips
+{
+    public List<Equip> equip = new List<Equip>();
+}
+[Serializable]
+public class SingleUses
+{
+    public List<SingleUse> singleUse = new List<SingleUse>();
+}
+
 [Serializable]
 public class Item
 {
@@ -20,42 +29,18 @@ public class Item
     public string imagePath;
 }
 [Serializable]
-public class Baits
+public class Bait : Item
 {
-    List<Bait> bait = new List<Bait>();
+    public int power;
+    public int speed;
+    public int allure;
 }
 [Serializable]
-public class Bait
+public class Equip : Item
 {
-    string name;
-    int power;
-    int speed;
-    int allure;
-    int creditLimit;
-    int cost;
+    public int power;
 }
 [Serializable]
-public class Equips
+public class SingleUse:Item
 {
-    List<Equip> equip = new List<Equip>();
-}
-[Serializable]
-public class Equip
-{
-    string name;
-    int power;
-    int creditLimit;
-    int cost;
-}
-[Serializable]
-public class SingleUses
-{
-    List<SingleUse> singleUse = new List<SingleUse>();
-}
-[Serializable]
-public class SingleUse
-{
-    string name;
-    int creditLimit;
-    int cost;
 }
