@@ -9,21 +9,20 @@ public class SetItems : MonoBehaviour
     public GameObject itemPref;
     public SetPanelData setPanelData;
     // Start is called before the first frame update
-    
-    List<Item>[] items = new List<Item>[3]; //items[선택한 서브메뉴][아이템 번호]
+    List<Bait> baits = null;
+    List<Equip> equips = null;
+    List<SingleUse> singleUses = null;
+
     private void Awake()
     {
         string strBait = Resources.Load<TextAsset>("ItemData/ItemBait").ToString();
-        List<Bait> baits = JsonUtility.FromJson<Baits>(strBait).bait;
-        items[0] = baits.Cast<Item>().ToList();
+        baits = JsonUtility.FromJson<Baits>(strBait).bait;
 
         string strEquip = Resources.Load<TextAsset>("ItemData/ItemEquip").ToString();
-        List<Equip> equips = JsonUtility.FromJson<Equips>(strEquip).equip;
-        items[1] = equips.Cast<Item>().ToList();
+        equips = JsonUtility.FromJson<Equips>(strEquip).equip;
 
         string strSing = Resources.Load<TextAsset>("ItemData/ItemSingleUse").ToString();
-        List<SingleUse> singleUses = JsonUtility.FromJson<SingleUses>(strSing).singleUse;
-        items[2] = singleUses.Cast<Item>().ToList();
+        singleUses = JsonUtility.FromJson<SingleUses>(strSing).singleUse;
 
         int maxCnt = baits.Count>equips.Count?baits.Count:equips.Count;
         maxCnt = singleUses.Count > maxCnt ? singleUses.Count : maxCnt;
@@ -33,9 +32,27 @@ public class SetItems : MonoBehaviour
             ins.SetActive(false);
         }
     }
-    public void SetItemsToSelectSubMenu(int select) {
+    private void Start()
+    {
+        BaitClick();
+    }
+    public void BaitClick()
+    {
+        List<Item> items = baits.Cast<Item>().ToList();
+        SetItemsToSelectSubMenu(items);
+    }
+    public void EquipClick() {
+        List<Item> items = equips.Cast<Item>().ToList();
+        SetItemsToSelectSubMenu(items);
+    }
+    public void SingleUseClick()
+    {
+        List<Item> items = singleUses.Cast<Item>().ToList();
+        SetItemsToSelectSubMenu(items);
+    }
+    void SetItemsToSelectSubMenu(List<Item> items) {
         int prefabCnt = transform.childCount;
-        int itemCnt = items[select].Count;
+        int itemCnt = items.Count;
 
         for(int i = 0; i < prefabCnt; i++)
         {
@@ -43,12 +60,12 @@ public class SetItems : MonoBehaviour
             if (i < itemCnt)
             {
                 Image image = item.GetComponent<Image>();
-                image.sprite = Resources.Load<Sprite>(items[select][i].imagePath);
+                image.sprite = Resources.Load<Sprite>(items[i].imagePath);
 
                 int index = i;
                 Button button = item.GetComponent<Button>();
                 button.onClick.RemoveAllListeners();
-                button.onClick.AddListener(() => setPanelData.SetData(items[select][index]));
+                button.onClick.AddListener(() => setPanelData.SetData(items[index]));
 
                 item.SetActive(true);
             }else if(item.activeSelf==true)

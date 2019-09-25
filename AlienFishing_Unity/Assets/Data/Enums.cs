@@ -7,3 +7,8 @@ public enum SubMenuIndex{
     EQUIP,
     OTHER,
 }
+public enum MenuIndex
+{
+    BUY, 
+    SELL,
+}

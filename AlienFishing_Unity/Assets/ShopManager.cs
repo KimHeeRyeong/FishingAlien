@@ -7,7 +7,9 @@ public class ShopManager : MonoBehaviour
     private static ShopManager instance = null;
     public static ShopManager Instance { get => instance; }
 
+    int select_menu = 2; 
     int select_subMenu = 0;
+    int select_item = 0;
 
     private void Awake()
     {
@@ -23,9 +25,14 @@ public class ShopManager : MonoBehaviour
     {
         instance = null;   
     }
-    
-    public void ChangeSubMenu(int select)
+    public int GetSelectItem()
     {
-        select_subMenu = select;
+        return select_item;
+    }
+    public int GetSelectSub() {
+        return select_subMenu;
+    }
+    public int GetSelectMenu() {
+        return select_menu;
     }
 }
