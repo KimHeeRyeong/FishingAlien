@@ -17,6 +17,7 @@ public class Enemy_move_scr : MonoBehaviour
     bool player_check = false;
 
     private int Hp;
+    float hp_up = 0;
     float move_plus = 0.0f;
     bool ene_move_on = true;
     int rand;
@@ -98,13 +99,13 @@ public class Enemy_move_scr : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && other.transform.tag == "Player" && ene_Hp <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && other.tag == "Player" && ene_Hp <= 0)
         {
             what_is.transform.localScale = new Vector3(0, 0, 0);
             heart.transform.localScale = new Vector3(3, 3, 3);
             this.GetComponent<Animator>().SetTrigger("Hit");
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && other.transform.tag == "Player" && ene_Hp > 0)
+        else if (Input.GetKeyDown(KeyCode.Space) && other.tag == "Player" && ene_Hp > 0)
         {
             this.GetComponent<Animator>().SetTrigger("Jump");
             float scale_what = 3.0f - ((float)ene_Hp * 0.3f);
@@ -113,11 +114,20 @@ public class Enemy_move_scr : MonoBehaviour
     }
    
     private void FixedUpdate()
-    {     
+    {
         if (Input.GetKeyDown(KeyCode.Space) && player_check == true)
-            {
+        {
             ene_Hp--;
+        }
+        if (ene_Hp < Hp)
+        {
+            hp_up = hp_up + Time.deltaTime;
+            if(hp_up > 1.5f)
+            {
+                ene_Hp++;
+                hp_up = 0;
             }
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {

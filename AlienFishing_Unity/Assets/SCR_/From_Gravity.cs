@@ -6,6 +6,7 @@ public class From_Gravity : MonoBehaviour
 {
     public float gravity = -10;
     public Vector3 gravityUP;
+    float cubeDistance;
     //이전 위치와 현재 위치가 다를시에만 중력이 작용되게;
 
     public Vector3 Attract(Transform body, Vector3 aft_pos)
@@ -18,8 +19,16 @@ public class From_Gravity : MonoBehaviour
         if (target_int_vec != aft_pos)
         {
             body.GetComponent<Rigidbody>().AddForce(gravityUP * gravity);
-            aft_pos = target_int_vec;            
+            aft_pos = target_int_vec;
         }
+        cubeDistance = Vector3.Distance(this.GetComponent<Transform>().position, body.transform.position);
+
+        if (body.transform.tag == "Player" && cubeDistance > 20)
+        {
+            body.GetComponent<Rigidbody>().AddForce(gravityUP * gravity);
+            aft_pos = target_int_vec;
+        }
+
         Quaternion targetRotation = Quaternion.FromToRotation(bodyUP, gravityUP) * body.rotation;
         body.rotation = Quaternion.Slerp(body.rotation, targetRotation, 50 * Time.deltaTime);
 

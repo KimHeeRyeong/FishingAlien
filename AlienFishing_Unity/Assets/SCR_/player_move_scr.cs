@@ -37,14 +37,9 @@ public class player_move_scr : MonoBehaviour
         {
             this.GetComponent<CapsuleCollider>().material = null;
         }
-        //if (Input.GetKeyDown(KeyCode.Space) && collision.gameObject.tag == "Enemy")
-        //{
-        //    transform.position = ship.transform.position;
-        //}
         if (Input.GetKeyDown(KeyCode.Space) && collision.gameObject.tag == "Rock")
         {
-            //rb.AddForce(transform.up * 30000 * jump * Time.deltaTime);
-            rb.velocity = transform.up * 30;
+            rb.velocity = transform.up * 30;           
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -59,10 +54,6 @@ public class player_move_scr : MonoBehaviour
         if (collision.transform.tag == "Enemy" && collision.transform.GetComponent<Enemy_move_scr>().ene_Hp <= 0)
         {
             get_ene = null;
-        }
-        if (collision.transform.tag == "Rock")
-        {
-            this.GetComponent<Rigidbody>().AddForce(-Vector3.up);
         }
     }
 
