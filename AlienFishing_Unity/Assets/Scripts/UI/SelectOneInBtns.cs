@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class SelectOneInBtns : MonoBehaviour
 {
     [SerializeField]
-    Button[] btns = null;
+    protected Button[] btns = null;
 
     Animator[] animators = null;
-    int btnCnt = 0;
+    protected int btnCnt = 0;
     int select = -1;//현재 선택된 버튼, -1==전체 선택 불가 상태
     
     protected bool BtnAddListener(int iselect)//init select
