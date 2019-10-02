@@ -5,7 +5,7 @@ using UnityEngine;
 public class From_Gravity : MonoBehaviour
 {
     public float gravity = -10;
-    public Vector3 gravityUP;
+    Vector3 gravityUP;
     //이전 위치와 현재 위치가 다를시에만 중력이 작용되게;
 
     public Vector3 Attract(Transform body, Vector3 aft_pos)

@@ -1,0 +1,13 @@
+How to use SphereNavigation
+
+1. Sphere Navigation data 생성
+	-Asset창 우클릭>Create>Sphere Navigation data
+
+2. Sphere Navigation 창 열기
+	-상단 탭 Window>Sphere Navigation
+
+3. Sphere Nav data-> 1에서 생성한 navigation data 넣기
+   Mesh에 원하는 모델 넣기
+	-Bake : Mesh의 vertex 데이터가 저장됨
+
+4. AStarFindPath 스크립트에 Sphere Nav data넣기 

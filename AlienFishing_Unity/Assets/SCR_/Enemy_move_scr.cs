@@ -89,6 +89,7 @@ public class Enemy_move_scr : MonoBehaviour
     {                
         if (other.tag == "Player")
         {
+            //플레이어 이동시 적캐릭터가 플레이어를 바라보도록 함
             Vector3 upgra = (this.transform.position - gravity.transform.position).normalized;
             this.transform.LookAt(target_player.transform.position, upgra);
             if (ene_Hp <= 0)
@@ -96,28 +97,32 @@ public class Enemy_move_scr : MonoBehaviour
                 this.GetComponent<Rigidbody>().AddForce(this.transform.forward * 30);
                 this.GetComponent<Rigidbody>().AddForce(this.transform.up * 15);
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space) && other.transform.tag == "Player" && ene_Hp <= 0)
-        {
-            what_is.transform.localScale = new Vector3(0, 0, 0);
-            heart.transform.localScale = new Vector3(3, 3, 3);
-            this.GetComponent<Animator>().SetTrigger("Hit");
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && other.transform.tag == "Player" && ene_Hp > 0)
-        {
-            this.GetComponent<Animator>().SetTrigger("Jump");
-            float scale_what = 3.0f - ((float)ene_Hp * 0.3f);
-            what_is.transform.localScale = new Vector3(scale_what, scale_what, scale_what);
+            //적 캐릭터 바운더리안에 들어간 상태에서 스페이스 클릭시
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ene_Hp--;
+                if (ene_Hp <= 0)
+                {
+                    ene_Hp = 0;
+                    heart.transform.localScale = new Vector3(5, 5, 5);
+                    GetComponent<Animator>().SetTrigger("Hit");
+                }
+                else
+                {
+                    what_is.transform.localScale = new Vector3(0, 0, 0);
+                    GetComponent<Animator>().SetTrigger("Jump");
+                    float scale_what = 5.0f - (5.0f/((float)Hp))*ene_Hp;
+                    Debug.Log(scale_what);
+                    heart.transform.localScale = new Vector3(scale_what, scale_what, scale_what);
+                }
+            }
         }
     }
-   
+
     private void FixedUpdate()
-    {     
-        if (Input.GetKeyDown(KeyCode.Space) && player_check == true)
-            {
-            ene_Hp--;
-            }
+    {
+       
     }
     private void OnCollisionEnter(Collision collision)
     {

@@ -14,7 +14,7 @@ public class Camera_move_scr : MonoBehaviour
     float maxfov = 100;
     bool zoomin = false;
     bool zoomout = false;
-    float zoom = 35;
+    float zoom = 55;
 
     // Update is called once per frame
     void Update()
@@ -30,7 +30,7 @@ public class Camera_move_scr : MonoBehaviour
             fov += Input.GetAxis("Mouse ScrollWheel") * -sensitivity;
             fov = Mathf.Clamp(fov, minfov, maxfov);
             Camera.main.fieldOfView = zoom;
-            if (zoom > 20.0f)
+            if (zoom > 30.0f)
             {
                 zoomin = true;
             }
@@ -41,7 +41,7 @@ public class Camera_move_scr : MonoBehaviour
             fov += Input.GetAxis("Mouse ScrollWheel") * -sensitivity;
             fov = Mathf.Clamp(fov, minfov, maxfov);
             Camera.main.fieldOfView = zoom;
-            if (zoom < 35.0f)
+            if (zoom <55)
             {
                 zoomout = true;
             }
@@ -49,14 +49,14 @@ public class Camera_move_scr : MonoBehaviour
 
         if (zoomin == true)
         {
-            zoom -= Time.deltaTime*15;
-            if (zoom < 20)
+            zoom -= Time.deltaTime*55;
+            if (zoom < 30)
             { zoomin = false; }
         }
         if(zoomout == true)
         {
             zoom += Time.deltaTime*25;
-            if (zoom > 35)
+            if (zoom > 55)
             { zoomout = false; }
         }
     }

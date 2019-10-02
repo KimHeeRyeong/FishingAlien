@@ -5,7 +5,7 @@ using UnityEngine;
 public class Barrier_scr : MonoBehaviour
 {
     public GameObject player;
-    public GameObject get_ene;
+   GameObject get_ene;
 
     void Update()
     {
@@ -13,11 +13,14 @@ public class Barrier_scr : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (get_ene != null)
+        if (!other.gameObject.CompareTag("Planet"))
         {
-            if (get_ene != other.gameObject)
+            if (get_ene != null)
             {
-                other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(100.0f, player.transform.position, 5.0f);
+                if (get_ene != other.gameObject)
+                {
+                    other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(100.0f, player.transform.position, 5.0f);
+                }
             }
         }
     }
