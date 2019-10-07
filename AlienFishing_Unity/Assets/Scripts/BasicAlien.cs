@@ -25,8 +25,10 @@ public class BasicAlien : MonoBehaviour
     Animator animator;
     EnemyAniState aniState;
     EnemyState state;
+    Transform playerPos;
     private void Awake()
     {
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<SphereNavAgent>();
         rd = GetComponent<Rigidbody>();
 
@@ -56,12 +58,15 @@ public class BasicAlien : MonoBehaviour
                 break;
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        animator.SetTrigger("Hit");
-        aniState = EnemyAniState.HIT;
-        if (collision.gameObject.CompareTag("Enemy"))
-            agent.StopDestination();
+        agent.StopDestination();
+        state = EnemyState.TRACKING;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        agent.StopDestination();
+        state = EnemyState.NONE;
     }
     protected virtual void Stop() {
     }
@@ -76,12 +81,22 @@ public class BasicAlien : MonoBehaviour
     }
     protected virtual void Tracking()
     {
+        if (aniState != EnemyAniState.RUN)
+        {
+            animator.SetTrigger("Run");
+            aniState = EnemyAniState.RUN;
+        }
+        agent.SetDestination(playerPos.position);
     }
     protected virtual void Escape()
     {
-
+        //if (aniState != EnemyAniState.WALK)
+        //{
+        //    animator.SetTrigger("Walk");
+        //    aniState = EnemyAniState.WALK;
+        //}
+        //if (agent.IsGoal())
+        //    agent.SetDestination(playerPos.position);
     }
-    //Basic Alien is Move Around planet
-        //->make shpere navgation
-    //if collision with player -> fishing system start
+
 }

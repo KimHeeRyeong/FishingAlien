@@ -1,0 +1,26 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent (typeof(Rigidbody))]
+public class PlayerGravity : MonoBehaviour
+{
+    Rigidbody rd;
+    public Transform planet;
+    Vector3 gravityUP;
+    private void Awake()
+    {
+        rd = GetComponent<Rigidbody>();
+        rd.useGravity = true;
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        Vector3 gravityUP = (transform.position - planet.position).normalized;
+        Physics.gravity = gravityUP * (-9.8f);
+        Quaternion targetRotation = Quaternion.FromToRotation(transform.up, gravityUP) * transform.rotation;
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 50 * Time.deltaTime);
+
+    }
+}

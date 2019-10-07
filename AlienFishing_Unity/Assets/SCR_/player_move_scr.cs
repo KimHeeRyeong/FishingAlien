@@ -49,10 +49,10 @@ public class player_move_scr : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.tag == "Enemy"&&collision.transform.GetComponent<Enemy_move_scr>().ene_Hp <= 0)
-        {
-            get_ene = collision.gameObject;            
-        }
+        //if (collision.transform.tag == "Enemy"&&collision.transform.GetComponent<Enemy_move_scr>().ene_Hp <= 0)
+        //{
+        //    get_ene = collision.gameObject;            
+        //}
     }
     private void OnCollisionExit(Collision collision)
     {

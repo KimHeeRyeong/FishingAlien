@@ -13,6 +13,7 @@ namespace ShpereNavigation
 
         AStarFindPath findPath;
         bool _goal;
+        uint _goalID;
         int _vertCnt;
         float distanceLimit = 0.1f;
         List<Vector3> path;
@@ -25,6 +26,7 @@ namespace ShpereNavigation
             path = null;
             findPath = planet.GetComponent<AStarFindPath>();
             _vertCnt = findPath.GetVertCnt();
+            _goalID = (uint)_vertCnt;
         }
         private void FixedUpdate()
         {
@@ -65,8 +67,14 @@ namespace ShpereNavigation
             if (moveTo == null)
             {
                 Debug.Log("move to null");
+                return;
             }
-            path = findPath.FindPathVectorOrNull(transform.position, moveTo);
+            uint start_id = findPath.GetPositionId(transform.position);
+            uint goal_id = findPath.GetPositionId(moveTo);
+            if (goal_id == _goalID)
+                return;
+            _goalID = goal_id;
+            path = findPath.FindPathOrNull(start_id,goal_id);
             if (path != null)
             {
                 _goal = false;
@@ -74,6 +82,7 @@ namespace ShpereNavigation
                 direction = movePath0 - transform.position;
                 direction.Normalize();
             }
+            
         }
         public void SetRandomDestination()
         {
@@ -91,6 +100,7 @@ namespace ShpereNavigation
         public void StopDestination() {
             path = null;
             _goal = true;
+            _goalID = (uint)_vertCnt;
         }
         public bool IsGoal()
         {
