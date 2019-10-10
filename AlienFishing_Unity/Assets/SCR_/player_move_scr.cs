@@ -54,17 +54,17 @@ public class player_move_scr : MonoBehaviour
         //    get_ene = collision.gameObject;            
         //}
     }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.transform.tag == "Enemy" && collision.transform.GetComponent<Enemy_move_scr>().ene_Hp <= 0)
-        {
-            get_ene = null;
-        }
-        if (collision.transform.tag == "Rock")
-        {
-            this.GetComponent<Rigidbody>().AddForce(-Vector3.up);
-        }
-    }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.transform.tag == "Enemy" && collision.transform.GetComponent<Enemy_move_scr>().ene_Hp <= 0)
+    //    {
+    //        get_ene = null;
+    //    }
+    //    if (collision.transform.tag == "Rock")
+    //    {
+    //        this.GetComponent<Rigidbody>().AddForce(-Vector3.up);
+    //    }
+    //}
 
     //private void OnTriggerStay(Collider other)
     //{

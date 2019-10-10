@@ -624,9 +624,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pRod: {fileID: 579836094}
   pBait: {fileID: 2066548699}
-  lineResolution: 1
+  lineResolution: 2.3
   a: 10
   speed: 3
+  planet: {fileID: 806866722}
+  colider: {fileID: 806866719}
 --- !u!120 &701105368
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -845,6 +847,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1513379293600434, guid: f7882032a9af0c9468c4d33e92617368,
     type: 3}
   m_PrefabInstance: {fileID: 136621576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &806866719 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 6479664347718864861, guid: ebfc5faa200bd734985d8ede89ee0a06,
+    type: 3}
+  m_PrefabInstance: {fileID: 6479664347678052143}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &806866722 stripped
 Transform:
@@ -2191,6 +2199,18 @@ PrefabInstance:
     - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: dd43b6f83eaf8c64497697443b1d87d3, type: 3}
       propertyPath: m_Materials.Array.data[0]
