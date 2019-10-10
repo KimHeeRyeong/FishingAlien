@@ -13,10 +13,10 @@ public class Barrier_scr : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (get_ene != null)
+        if (get_ene == other.gameObject.GetComponent<Rigidbody>())
         {
-            if (get_ene != other.gameObject)
-            {
+            if (get_ene != null)
+            {            
                 other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(100.0f, player.transform.position, 5.0f);
             }
         }

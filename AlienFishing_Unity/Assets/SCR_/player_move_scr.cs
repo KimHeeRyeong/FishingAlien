@@ -13,6 +13,8 @@ public class player_move_scr : MonoBehaviour
 
     private Rigidbody rb;
 
+    float x,z;
+
     int rock_check = 3;
     // Start is called before the first frame update
     void Start()
@@ -25,10 +27,19 @@ public class player_move_scr : MonoBehaviour
     void Update()
     {
         //이동
-        float x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
-        float z = Input.GetAxis("Vertical") * Time.deltaTime * speed;
+        x = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+        z = Input.GetAxis("Vertical") * Time.deltaTime * speed;
 
         transform.Translate(x, 0, z);
+
+        if (x != 0 || z != 0)
+        { 
+            GameObject.Find("Move_player_sound").GetComponent<AudioSource>().loop = true;
+            if(GameObject.Find("Move_player_sound").GetComponent<AudioSource>().isPlaying==false)
+            GameObject.Find("Move_player_sound").GetComponent<AudioSource>().Play();
+        }
+        else
+        { GameObject.Find("Move_player_sound").GetComponent<AudioSource>().loop = false; }
     }
     private void OnCollisionStay(Collision collision)
     {
@@ -57,14 +68,4 @@ public class player_move_scr : MonoBehaviour
         }
     }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (Barrier.GetComponent<MeshRenderer>().material.color.a == 0.5f)
-    //    {
-    //        if (other.transform.tag == "Enemy" && other.GetComponent<Enemy_move_scr>().ene_Hp >= 1)
-    //        {
-    //            other.GetComponent<Rigidbody>().AddForce(Vector3.up * 10);
-    //        }
-    //    }
-    //}
 }

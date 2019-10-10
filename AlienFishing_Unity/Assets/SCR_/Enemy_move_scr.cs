@@ -11,6 +11,7 @@ public class Enemy_move_scr : MonoBehaviour
     public GameObject Barrier;
     public GameObject heart;
     public From_Gravity gravity;
+    public GameObject boom;
 
     private Rigidbody rb;
     public int ene_Hp = 5;
@@ -30,20 +31,17 @@ public class Enemy_move_scr : MonoBehaviour
     }
     void Update()
     {
-        if (!player_check)
+        if (move_plus < 3)
         {
-            if (move_plus < 3)
-            {
-                move_plus = move_plus + Time.deltaTime;
-                ene_move_on = true;
-            }
-            else if (move_plus > 2)
-            {
-                rand = Random.Range(0, 4);
-                move_plus = 0;
-                ene_move_on = false;
-            }
+            move_plus = move_plus + Time.deltaTime;
+            ene_move_on = true;
         }
+        else if (move_plus > 2)
+        {
+            rand = Random.Range(0, 4);
+            move_plus = 0;
+            ene_move_on = false;
+        }        
 
         if (ene_move_on != true)
         {
@@ -70,18 +68,21 @@ public class Enemy_move_scr : MonoBehaviour
     {
         if (other.transform.tag == "Player")
         {           
-            what_is.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
-            player_check = true;
+            if(ene_Hp>0)
+            what_is.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);            
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.transform.tag == "Player")
         {
-            what_is.transform.localScale = new Vector3(0, 0, 0);
-            heart.transform.localScale = new Vector3(0, 0, 0);
+            if (ene_Hp > 0)
+            {
+                what_is.transform.localScale = new Vector3(0, 0, 0);
+                heart.transform.localScale = new Vector3(0, 0, 0);
+            }
             Barrier.GetComponent<MeshRenderer>().material.color = new Color(Barrier.GetComponent<MeshRenderer>().material.color.r, Barrier.GetComponent<MeshRenderer>().material.color.g, Barrier.GetComponent<MeshRenderer>().material.color.b, 0);
-            ene_Hp = Hp;
+            //ene_Hp = Hp;
             player_check = false;
         }
         
@@ -90,8 +91,12 @@ public class Enemy_move_scr : MonoBehaviour
     {                
         if (other.tag == "Player")
         {
-            Vector3 upgra = (this.transform.position - gravity.transform.position).normalized;
-            this.transform.LookAt(target_player.transform.position, upgra);
+            player_check = true;
+            if (ene_Hp < ene_Hp * 0.5)
+            {                
+                Vector3 upgra = (this.transform.position - gravity.transform.position).normalized;
+                this.transform.LookAt(target_player.transform.position, upgra);
+            }
             if (ene_Hp <= 0)
             {
                 this.GetComponent<Rigidbody>().AddForce(this.transform.forward * 30);
@@ -109,6 +114,15 @@ public class Enemy_move_scr : MonoBehaviour
         {
             this.GetComponent<Animator>().SetTrigger("Jump");
             float scale_what = 3.0f - ((float)ene_Hp * 0.3f);
+            if (!boom.GetComponent<ParticleSystem>().isPlaying)
+            {
+                boom.GetComponent<ParticleSystem>().Play();
+            }
+            else
+            {
+                boom.GetComponent<ParticleSystem>().Stop(true);
+                boom.GetComponent<ParticleSystem>().Play();
+            }
             what_is.transform.localScale = new Vector3(scale_what, scale_what, scale_what);
         }
     }
@@ -119,7 +133,7 @@ public class Enemy_move_scr : MonoBehaviour
         {
             ene_Hp--;
         }
-        if (ene_Hp < Hp)
+        if (ene_Hp < Hp&& ene_Hp >0)
         {
             hp_up = hp_up + Time.deltaTime;
             if(hp_up > 1.5f)

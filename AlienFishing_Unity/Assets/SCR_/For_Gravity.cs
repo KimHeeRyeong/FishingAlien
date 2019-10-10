@@ -14,12 +14,12 @@ public class For_Gravity : MonoBehaviour
     {
         this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         this.GetComponent<Rigidbody>().useGravity = false;
-        myTransform = transform;
+        //myTransform = transform;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        aft_pos = attractor.Attract(myTransform, aft_pos);
+        aft_pos = attractor.Attract(transform, aft_pos);
     }
 }
