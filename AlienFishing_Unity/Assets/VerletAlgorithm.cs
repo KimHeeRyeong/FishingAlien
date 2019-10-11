@@ -82,7 +82,7 @@ public class VerletAlgorithm : MonoBehaviour
             segs[i].t_dt = segs[i].t;
             segs[i].t = posNext;
         }
-        for(int i = 0;i<2;i++)
+        for(int i = 0;i<10;i++)
         LengthConsrtaint();
     }
     void CheckSegment() {
