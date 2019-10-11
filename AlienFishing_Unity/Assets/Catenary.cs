@@ -20,6 +20,8 @@ public class Catenary : MonoBehaviour
     public MeshCollider colider;
     Vector3 saveBaitPos;
     public float castingSpeed = 10;
+    public Rigidbody rdBait;
+    bool space = false;
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -38,24 +40,22 @@ public class Catenary : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
+           // rdBait.useGravity = false;
+           
             int cnt = lineRenderer.positionCount;
-            Ray ray = new Ray();
-            ray.origin = lineRenderer.GetPosition(cnt - 1);
-            ray.direction = (planet.position-lineRenderer.GetPosition(cnt - 1)).normalized;
-            RaycastHit hit;
-            Vector3 moveDir = Vector3.zero;
-            if (colider.Raycast(ray, out hit, 100))
-            {
-                moveDir= hit.point;
-            }
-            ray.origin = lineRenderer.GetPosition(cnt - 2);
-            ray.direction = (planet.position - lineRenderer.GetPosition(cnt - 2)).normalized;
-            if (colider.Raycast(ray, out hit, 100))
-            {
-                moveDir =hit.point-moveDir;
-            }
-            bait.position += moveDir * Time.deltaTime * castingSpeed;
+            Vector3 moveDir =(pRod.position-pBait.position).normalized;
+            //bait.position += moveDir * Time.deltaTime * castingSpeed;
+            rdBait.AddForce(moveDir*castingSpeed);
         }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            // rdBait.useGravity = false;
+            int cnt = lineRenderer.positionCount;
+            Vector3 moveDir = (pRod.position - pBait.position).normalized;
+            //bait.position += moveDir * Time.deltaTime * castingSpeed;
+            rdBait.velocity = moveDir * castingSpeed;
+        }
+
         //if (Input.GetMouseButton(1))
         //{
         //    a -= Time.deltaTime*speed;Debug.Log(a);
@@ -80,16 +80,16 @@ public class Catenary : MonoBehaviour
 
             points[i] = point;
         }
-        for (int i = 1; i < pCnt - 1; ++i)
+        for (int i = 1; i < pCnt - 2; ++i)
         {
-            Vector3 dirToPlanet = (planet.position - points[i]).normalized;
-            float scale = 200;
             Ray ray = new Ray();
-            ray.origin = points[i]- scale * dirToPlanet;
-            ray.direction = dirToPlanet;
+            ray.origin = points[i];
+            ray.direction = (points[i]-points[i+1]);
             RaycastHit hit;
-            if(colider.Raycast(ray, out hit,scale)){
-                points[i] = hit.point-dirToPlanet*0.2f;
+            if(colider.Raycast(ray, out hit,Vector3.Distance(points[i], points[i+1]))){
+                float disToRod = Vector3.Distance(pRod.position, planet.position);
+                pRod.position = (points[1]-planet.position).normalized*disToRod+planet.position;
+                break;
             }
 
         }

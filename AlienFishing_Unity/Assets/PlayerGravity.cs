@@ -8,6 +8,7 @@ public class PlayerGravity : MonoBehaviour
     Rigidbody rd;
     public Transform planet;
     Vector3 gravityUP;
+    public float grav;
     private void Awake()
     {
         rd = GetComponent<Rigidbody>();
@@ -18,7 +19,7 @@ public class PlayerGravity : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 gravityUP = (transform.position - planet.position).normalized;
-        Physics.gravity = gravityUP * (-9.8f);
+        Physics.gravity = gravityUP * -grav;
         Quaternion targetRotation = Quaternion.FromToRotation(transform.up, gravityUP) * transform.rotation;
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 50 * Time.deltaTime);
 
