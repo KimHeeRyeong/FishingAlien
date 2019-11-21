@@ -3,8 +3,6 @@
 [- Alien Moving Pattern](#alien-moving-pattern)  
 [- Generate and Load Map](#generate-and-load-map)
 #
-
-#Alien Moving Pattern
 #### Alien Moving Pattern  
 
 ![Basic](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/AlienMovingPattern/Basic.gif "Basic")
