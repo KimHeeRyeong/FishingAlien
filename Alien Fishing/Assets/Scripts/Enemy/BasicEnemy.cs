@@ -299,23 +299,23 @@ public class BasicEnemy : MonoBehaviour
     }
     #endregion
     // Test
-    private void OnDrawGizmos()
-    {
+    //private void OnDrawGizmos()
+    //{
 
-        if (agent != null && agent.hasPath)
-        {
-            Vector3[] corners = agent.path.corners;
-            int cnt = corners.Length;
-            if (cnt == 0)
-                return;
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, corners[0]);
-            for (int i = 0; i < cnt - 1; i++)
-            {
-                Gizmos.DrawLine(corners[i], corners[i + 1]);
-            }
-        }
-    }
+    //    if (agent != null && agent.hasPath)
+    //    {
+    //        Vector3[] corners = agent.path.corners;
+    //        int cnt = corners.Length;
+    //        if (cnt == 0)
+    //            return;
+    //        Gizmos.color = Color.red;
+    //        Gizmos.DrawLine(transform.position, corners[0]);
+    //        for (int i = 0; i < cnt - 1; i++)
+    //        {
+    //            Gizmos.DrawLine(corners[i], corners[i + 1]);
+    //        }
+    //    }
+    //}
     public string GetEnemyID()
     {
         return enemyUIDCODE;
