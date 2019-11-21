@@ -1,4 +1,4 @@
-# [FishingAlien](https://github.com/KimHeeRyeong/FishingAlien/README.md)
+# [FishingAlien](https://github.com/KimHeeRyeong/FishingAlien/blob/master/README.md)
 
 - [Alien Moving Pattern](#alien-moving-pattern)
 - [Generate and Load Map](#generate-and-load-map)
