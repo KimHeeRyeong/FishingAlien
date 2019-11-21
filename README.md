@@ -6,8 +6,7 @@
 ![Boss_Report](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/AlienMovingPattern/Boss_Report.gif "Boss_Report")  
 ![Escape](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/AlienMovingPattern/Escape.gif "Escape")
 ![Tracking](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/AlienMovingPattern/Tracking.gif "Tracking")  
-    
-    
+#
 #### Generate and Load Map  
 - Generate Particle  
 ![ParticleGenerate](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/GenerateLoadMap/ParticleGenerate.gif "Generate Particle")
