@@ -1,9 +1,9 @@
 # FishingAlien 
 
-- [Alien](#alien)
+- [Alien Moving Pattern](#alien-moving-pattern)
 - [Generate And Load Map](#generate-and-load-map)
 
-## Alien
+## Alien Moving Pattern
 
 ![Basic](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/AlienMovingPattern/Basic.gif "Basic")
 ![Boss_Report](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/AlienMovingPattern/Boss_Report.gif "Boss_Report")  
