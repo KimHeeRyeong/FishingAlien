@@ -1,0 +1,25 @@
+{
+ "baitDetail":[
+   {
+     "UIDCODE":"01300",
+     "baitID":"01000",
+    "data": "기본으로 지급받은 미끼 로봇. 알루미늄 재질로 만들어져 정말 기본적인 낚시만 할 수 있다.",
+    "imagePath": "BaitImage/bait1",
+     "cost":0
+   },
+  {
+    "UIDCODE": "01301",
+    "baitID": "01001",
+    "data": "기본 미끼 로봇보다는 좋으나 그냥 그런 미끼 로봇. 낚시 초심자가 쓰기에도 그냥 그렇다.",
+    "imagePath": "BaitImage/bait2",
+    "cost": 100
+  },
+  {
+    "UIDCODE": "01302",
+    "baitID": "01002",
+    "data": "아마 이정도면 쓰기 나쁘지 않을, 적당한 미끼 로봇. 재질도 적당, 연료도 적당한 걸 쓴다.",
+    "imagePath": "BaitImage/bait3",
+    "cost": 500
+  }
+ ]
+}

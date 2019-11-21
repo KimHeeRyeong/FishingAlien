@@ -1,0 +1,25 @@
+{
+  "bait": [
+    {
+      "UIDCODE": "01000",
+      "name": "기본 미끼 로봇",
+      "power": 5,
+      "speed": 20,
+      "allure": 2
+    },
+    {
+      "UIDCODE": "01001",
+      "name": "그냥 그런 미끼 로봇",
+      "power": 12,
+      "speed": 40,
+      "allure": 5
+    },
+    {
+      "UIDCODE": "01002",
+      "name": "아마 적당한 미끼 로봇",
+      "power": 20,
+      "speed": 70,
+      "allure": 15
+    }
+  ]
+}

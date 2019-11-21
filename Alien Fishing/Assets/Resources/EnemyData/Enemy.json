@@ -1,0 +1,164 @@
+{
+  "enemy": [
+    {
+      "UIDCODE": "02000",
+      "name": "뚜뚜",
+      "rareLevel": 1,
+      "power": 5,
+      "speed": 8,
+      "allureResistance": 1,
+      "cost": 80,
+      "imagePath": "EnemyImage/enemy_basic"
+    },
+    {
+      "UIDCODE": "02001",
+      "name": "또또",
+      "rareLevel": 2,
+      "power": 4,
+      "speed": 12,
+      "allureResistance": 4,
+      "cost": 130,
+      "imagePath": "EnemyImage/enemy_escape"
+    },
+    {
+      "UIDCODE": "02002",
+      "name": "삐삐",
+      "rareLevel": 2,
+      "power": 10,
+      "speed": 9,
+      "allureResistance": 7,
+      "cost": 170,
+      "imagePath": "EnemyImage/enemy_report"
+    },
+    {
+      "UIDCODE": "02003",
+      "name": "띠띠",
+      "rareLevel": 3,
+      "power": 20,
+      "speed": 13,
+      "allureResistance": 12,
+      "cost": 300,
+      "imagePath": "EnemyImage/enemy_boss"
+    },
+    {
+      "UIDCODE": "02004",
+      "name": "뿌뿌",
+      "rareLevel": 1,
+      "power": 9,
+      "speed": 10,
+      "allureResistance": 5,
+      "cost": 110,
+      "imagePath": "EnemyImage/enemy_tracking"
+    },
+    {
+      "UIDCODE": "02005",
+      "name": "꼬꼬",
+      "rareLevel": 1,
+      "power": 7,
+      "speed": 10,
+      "allureResistance": 4,
+      "cost": 100,
+      "imagePath": "EnemyImage/enemy_ChickEscape"
+    },
+    {
+      "UIDCODE": "02006",
+      "name": "두두",
+      "rareLevel": 3,
+      "power": 15,
+      "speed": 20,
+      "allureResistance": 10,
+      "cost": 320,
+      "imagePath": "EnemyImage/enemy_Lizard"
+    },
+    {
+      "UIDCODE": "02007",
+      "name": "미미",
+      "rareLevel": 2,
+      "power": 9,
+      "speed": 12,
+      "allureResistance": 5,
+      "cost": 190,
+      "imagePath": "EnemyImage/enemy_LongCubeRabbit"
+    },
+    {
+      "UIDCODE": "02008",
+      "name": "쑤쑤",
+      "rareLevel": 1,
+      "power": 3,
+      "speed": 9,
+      "allureResistance": 3,
+      "cost": 100,
+      "imagePath": "EnemyImage/enemy_DeerTracking"
+    },
+    {
+      "UIDCODE": "02009",
+      "name": "나나",
+      "rareLevel": 2,
+      "power": 14,
+      "speed": 13,
+      "allureResistance": 7,
+      "cost": 230,
+      "imagePath": "EnemyImage/enemy_LongCubeMonkey"
+    },
+    {
+      "UIDCODE": "02010",
+      "name": "만돌만돌",
+      "rareLevel": 5,
+      "power": 40,
+      "speed": 30,
+      "allureResistance": 20,
+      "cost": 3000,
+      "imagePath": "EnemyImage/enemy_LongCubeMint"
+    },
+    {
+      "UIDCODE": "02011",
+      "name": "둔둔",
+      "rareLevel": 4,
+      "power": 28,
+      "speed": 3,
+      "allureResistance": 15,
+      "cost": 1000,
+      "imagePath": "EnemyImage/enemy_Turtle"
+    },
+    {
+      "UIDCODE": "02012",
+      "name": "꾸꾸",
+      "rareLevel": 2,
+      "power": 18,
+      "speed": 16,
+      "allureResistance": 3,
+      "cost": 450,
+      "imagePath": "EnemyImage/enemy_LongCubeBear"
+    },
+    {
+      "UIDCODE": "02013",
+      "name": "해해",
+      "rareLevel": 3,
+      "power": 12,
+      "speed": 7,
+      "allureResistance": 14,
+      "cost": 490,
+      "imagePath": "EnemyImage/enemy_LongCubeGoral"
+    },
+    {
+      "UIDCODE": "02014",
+      "name": "샤샤",
+      "rareLevel": 3,
+      "power": 15,
+      "speed": 4,
+      "allureResistance": 13,
+      "cost": 510,
+      "imagePath": "EnemyImage/enemy_Goat"
+    },
+    {
+      "UIDCODE": "02015",
+      "name": "짭돌짭돌",
+      "rareLevel": 3,
+      "power": 40,
+      "speed": 30,
+      "allureResistance": 20,
+      "cost": 30,
+      "imagePath": "EnemyImage/enemy_LongCubeMint_2"
+    }
+  ]
+}

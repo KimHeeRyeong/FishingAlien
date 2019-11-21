@@ -1,0 +1,23 @@
+{"enemyType":[
+  {"UIDCODE":"02200",
+"typeData":"범위 안에 들어가면 먼저 다가옴"
+},
+{"UIDCODE":"02201",
+"typeData":"무조건 멀리 도망가려 함"
+},
+{"UIDCODE":"02202",
+"typeData":"우두머리를 따라다니며 무리 지음"
+},
+{"UIDCODE":"02203",
+"typeData":"무리의 우두머리"
+},
+{"UIDCODE":"02204",
+"typeData":"물가에서 서식함"
+},
+{"UIDCODE":"02205",
+"typeData":"밤에만 나오고 낮에는 사라짐"
+},
+{"UIDCODE":"02206",
+"typeData":"그냥 여기저기 돌아다님"
+}
+  ]}
