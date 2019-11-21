@@ -1,9 +1,9 @@
-# [FishingAlien](https://github.com/KimHeeRyeong/FishingAlien/blob/master/README.md)
+# FishingAlien 
 
 - [Alien Moving Pattern](#alien-moving-pattern)
-- [Generate and Load Map](#generate-and-load-map)
+- [Generate And Load Map](#generate-and-load-map)
 
-## <a name="alien-moving-pattern"></a>Alien Moving Pattern  
+## Alien Moving Pattern  
 
 
 ![Basic](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/AlienMovingPattern/Basic.gif "Basic")
