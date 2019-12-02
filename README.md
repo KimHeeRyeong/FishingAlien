@@ -5,6 +5,13 @@
 - [맵 생성 및 로드](#generate-and-load-map)
 
 ## Fishing System
+#### 미끼 선택
+![SelectBait](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/FishingSystem/selectBait.gif "Select_Bait")
+#### 낚시 시작
+![SelectPlanet](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/FishingSystem/selectPlanet2.gif "Select_Planet")
+#### 플레이 및 낚시 종료
+- 외계생물을 낚은 경우  
+![GetEnemy](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/FishingSystem/GetEnemy.gif "Get_Enemy")
 
 ## Alien Moving Pattern
 
