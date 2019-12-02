@@ -1,7 +1,10 @@
 # FishingAlien 
 
-- [Alien Moving Pattern](#alien-moving-pattern)
-- [Generate And Load Map](#generate-and-load-map)
+- [낚시 시스템](#fishing-system)
+- [외계 생물 패턴](#alien-moving-pattern)
+- [맵 생성 및 로드](#generate-and-load-map)
+
+## Fishing System
 
 ## Alien Moving Pattern
 
@@ -17,4 +20,3 @@
 ![ParticleGenerate](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/GenerateLoadMap/ParticleGenerate.gif "Generate Particle")
 - Load Chunk   
 ![ChunkLoad](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/GenerateLoadMap/ChunkLoad.gif "Load Chunk")
-
