@@ -1,4 +1,5 @@
 # FishingAlien 
+플레이 영상 : [https://www.youtube.com/watch?v=T9LNIpSd838](https://www.youtube.com/watch?v=T9LNIpSd838)  
 
 - [1) 낚시 시스템](https://github.com/KimHeeRyeong/FishingAlien#1-낚시-시스템)
 - [2) 외계 생물 패턴](https://github.com/KimHeeRyeong/FishingAlien#2-외계-생물-패턴)
