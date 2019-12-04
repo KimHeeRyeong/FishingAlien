@@ -1,6 +1,6 @@
 # FishingAlien 
 
-- [1) 낚시 시스템](#fishing-system)
+- [1) 낚시 시스템](https://github.com/KimHeeRyeong/FishingAlien/blob/master/README.md#1-낚시-시스템)
 - [2) 외계 생물 패턴](#alien-moving-pattern)
 - [3) 맵 생성 및 로드](#generate-and-load-map)
 
