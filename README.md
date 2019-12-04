@@ -42,7 +42,7 @@
 
 ## 3) 맵 생성 및 로드
 [관련 코드](https://github.com/KimHeeRyeong/FishingAlien/tree/master/Alien%20Fishing/Assets/Scripts/Map): 맵 관련 코드 파일 
-- Generate Particle  
+#### - Generate Particle  
 ![ParticleGenerate](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/GenerateLoadMap/ParticleGenerate.gif "Generate Particle")
-- Load Chunk   
+#### - Load Chunk   
 ![ChunkLoad](https://github.com/KimHeeRyeong/FishingAlien/blob/master/GIF/GenerateLoadMap/ChunkLoad.gif "Load Chunk")  
